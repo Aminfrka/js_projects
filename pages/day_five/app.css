@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 30px);
+  height: calc(100vh + 30px);
+  background-image: url("bg.jpg");
+  background-position: center;
+  background-size: cover;
+  filter: blur(30px);
+}
+
+#content {
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: rgb(172, 89, 89);
+}

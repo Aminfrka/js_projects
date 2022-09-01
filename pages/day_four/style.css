@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+}
+
+.page.left {
+  left: 0;
+  background-image: url("ps.jpg");
+  background-size: cover;
+}
+
+.page.left::before {
+  content: "";
+  background-color: rgba(15, 15, 119, 0.466);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.page.right {
+  background-image: url("xbox.jpg");
+  background-size: cover;
+  right: 0;
+}
+.page.right::before {
+  position: absolute;
+  background-color: rgba(23, 23, 27, 0.466);
+  top: 0;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+}
+
+h2 {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+}
+
+a {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 15px 50px;
+  text-decoration: none;
+  border: 2px solid white;
+  /* z-index: 100; */
+  font-size: 25px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.page.right a:hover {
+  background-color: green;
+  border-color: green;
+}
+
+.page.left a:hover {
+  background-color: rgb(133, 133, 236);
+  border-color: rgb(133, 133, 236);
+}
+
+.active-right .page.right {
+  width: 70%;
+}
+.active-right .page.left {
+  width: 30%;
+}
+
+.container.active-left .page.left {
+  width: 70%;
+}
+.container.active-left .page.right {
+  width: 30%;
+}
+
+.page.left::before,
+.page.left::before,
+.page.left,
+.page.right {
+  transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 680px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  a {
+    padding: 10px 15px;
+    font-size: 15px;
+  }
+}

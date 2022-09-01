@@ -1,0 +1,176 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #444;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+p {
+  color: #999;
+  font-size: 19px;
+  line-height: 1.4;
+  word-spacing: 1.2;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.circle-container {
+  position: relative;
+  top: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  transition: transform 0.4s ease-in;
+}
+
+.circle {
+  background-color: rgb(14, 155, 73);
+  height: 100%;
+  transition: transform 0.4s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(214, 224, 214);
+  transform-origin: center;
+}
+
+button {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+}
+
+button i {
+  font-size: 23px;
+  color: #fff;
+}
+
+#open-nav {
+  left: 60%;
+  top: 60%;
+}
+
+#close-nav {
+  bottom: 10%;
+  left: 20%;
+}
+
+.container.active .circle {
+  transform: rotate(250deg);
+}
+
+.container.active #close-nav {
+  transform: rotate(230deg);
+  left: 10%;
+  top: 10%;
+}
+
+.container {
+  width: 100%;
+  max-width: 100vw;
+  background-color: #000;
+  transform-origin: top left;
+  transition: transform 0.4s ease;
+}
+
+.container.active {
+  transform: rotate(-30deg);
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 40px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  text-shadow: 0 0 2px #fff, 0 0 4px #0222;
+  letter-spacing: 1.6;
+  text-decoration: underline;
+}
+
+small {
+  font-size: 13px;
+  font-family: monospace;
+  font-style: italic;
+  color: bisque;
+}
+
+article p {
+  text-align: justify;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #fffafa;
+  font-family: monospace;
+  font-size: 20px;
+  font-style: oblique;
+  padding: 20px auto;
+}
+
+nav {
+  position: fixed;
+  z-index: 100;
+  transition: transform 0.4s ease;
+  transform: translateX(-300%);
+  bottom: 10px;
+  left: 50px;
+}
+
+li {
+  text-transform: capitalize;
+  list-style: none;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+li i {
+  margin-right: 10px;
+  color: whitesmoke;
+  font-size: 20px;
+}
+
+ul li + li {
+  transform: translate(20px);
+  transition-delay: 0.4s;
+}
+ul li + li + li {
+  transform: translate(40px);
+  transition-delay: 0.4s;
+}
+ul li + li + li + li {
+  transform: translate(60px);
+  transition-delay: 0.4s;
+}
+ul li + li + li + li + li + li {
+  transform: translate(70px);
+  transition-delay: 0.4s;
+}
+
+.container.active + nav {
+  transition-delay: 0.4s;
+  transform: translateX(00%);
+}
